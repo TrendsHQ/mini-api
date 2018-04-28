@@ -1,5 +1,5 @@
 {
-  "name": "@zlogjs/mini-api",
+  "name": "mini-api",
   "version": "0.0.0",
   "description": "Adds Dynamic Routes, Dynamic Handlers, and creates mini service instances, includes etra class which provides the funcionality to dynamically inject @zlogjs/backup-manager services at the same time",
   "main": "index.js",
