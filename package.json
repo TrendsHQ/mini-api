@@ -1,0 +1,60 @@
+{
+  "name": "@zlogjs/mini-api",
+  "version": "0.0.0",
+  "description": "Adds Dynamic Routes, Dynamic Handlers, and creates mini service instances, includes etra class which provides the funcionality to dynamically inject @zlogjs/backup-manager services at the same time",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ./src",
+    "clean": "node ./scripts/clean",
+    "start": "nodemon --exec \"clear & npm run dev\"",
+    "dev": "node ./scripts/dev.js",
+    "serve:docs": "live-server ./docs",
+    "preserve:docs": "npm run build:docs",
+    "prebuild": "npm run clean",
+    "build": "babel src --out-dir build",
+    "test": "mocha --compilers js:babel-core/register ./test/index.js",
+    "build:docs": "node_modules/.bin/jsdoc --configure ./jsdoc/.jsdoc.json --verbose",
+    "lint:w": "nodemon --exec \"clear & npm run lint\"",
+    "test:w": "nodemon --exec \"clear & npm run test\"",
+    "test:dev": "nodemon --exec \"clear &  DEBUG=zlogjs:*,test:* node test/manual\"",
+    "build:w": "nodemon --ignore build --exec \"clear & npm run build\"",
+    "build:docs:w": "nodemon --ignore docs --watch src --exec npm run build:docs"
+  },
+  "commands": {
+    "scope-bind": "npm config set @myScope:registry http://192.168.0.4:2222",
+    "test:dev:params": "nodemon --exec \"clear &  DEBUG=zlogjs:* node test/manual\"",
+    "test:dev": "nodemon --exec \"clear & node test/manual\""
+  },
+  "keywords": [
+    "api",
+    "mini-api",
+    "routes",
+    "service"
+  ],
+  "author": "zeeshan(zeeshan.emallates@gmail.com)",
+  "publishConfig": {
+    "registry": "http://192.168.0.4:2222"
+  },
+  "jshintConfig": {
+    "esnext": true
+  },
+  "editor": "subl.exe",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-syntax-async-functions": "^6.13.0",
+    "babel-plugin-transform-regenerator": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "emallates-documentation-template": "0.0.2",
+    "eslint": "^3.19.0",
+    "eslint-plugin-import": "^2.2.0",
+    "jsdoc": "^3.4.3",
+    "shelljs": "^0.7.8",
+    "should": "^11.1.1"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "express": "^4.16.3"
+  }
+}

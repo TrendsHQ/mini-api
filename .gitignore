@@ -1,0 +1,8 @@
+build
+jsdoc
+node_modules
+test/manual
+package-lock.json
+release.sh
+release-local.sh
+yarn.lock
